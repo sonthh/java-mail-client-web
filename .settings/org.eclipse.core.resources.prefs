@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/common/sidebar.jsp=UTF-8
+encoding//WebContent/WEB-INF/common/taglib.jsp=UTF-8
+encoding//WebContent/WEB-INF/templates/template.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/compose.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/inbox.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/login.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/read.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/sent.jsp=UTF-8
+encoding/<project>=UTF-8
