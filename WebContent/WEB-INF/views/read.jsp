@@ -10,9 +10,31 @@
     <div class="box-body no-padding">
    	  <div class="mailbox-read-info">
         <h3>${gmail.subject}</h3>
-        <h5>From: ${gmail.from}
-          <span class="mailbox-read-time pull-right">
-            <fmt:formatDate value="${gmail.date}" pattern="hh:mm:ss dd/MM/yyyy" /></span></h5>
+        <h5 style="position: relative;">
+          <span>From: ${gmail.from}</span>
+          
+          <c:if test="${gmail.to.size() > 0}"><br/>
+          	<span>To: 
+          	<c:forEach items="${gmail.to}" var="item" varStatus="theCount"><c:if test="${theCount.index > 0}">, </c:if>${item}</c:forEach>
+          	</span>
+          </c:if>
+          
+          <c:if test="${gmail.cc.size() > 0}"><br/>
+          	<span>CC: 
+          	<c:forEach items="${gmail.cc}" var="item" varStatus="theCount"><c:if test="${theCount.index > 0}">, </c:if>${item}</c:forEach>
+          	</span>
+          </c:if>
+          
+          <c:if test="${gmail.bcc.size() > 0}"><br/>
+          	<span>BCC: 
+          	<c:forEach items="${gmail.bcc}" var="item" varStatus="theCount"><c:if test="${theCount.index > 0}">, </c:if>${item}</c:forEach>
+          	</span>
+          </c:if>
+          
+          <span class="mailbox-read-time pull-right" style="position: absolute;top: 5px;right: 1px;">
+           	<fmt:formatDate value="${gmail.date}" pattern="hh:mm:ss dd/MM/yyyy" />
+           </span>
+         </h5>
       </div>
       <div class="mailbox-controls with-border text-center">
         <form class="btn-group" action="/delete?t=${param.t}" method="post">

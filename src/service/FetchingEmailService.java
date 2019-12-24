@@ -159,7 +159,7 @@ public class FetchingEmailService {
 			if (addresses != null) {
 				ArrayList<String> cc = new ArrayList<>();
 				for (Address a : addresses)
-					cc.add(a.toString());
+					cc.add(parseAddressFrom(a.toString()));
 				gmail.setCc(cc);
 			}
 			// BCC
@@ -167,7 +167,7 @@ public class FetchingEmailService {
 			if (addresses != null) {
 				ArrayList<String> bcc = new ArrayList<>();
 				for (Address a : addresses)
-					bcc.add(a.toString());
+					bcc.add(parseAddressFrom(a.toString()));
 				gmail.setBcc(bcc);
 			}
 			// TO
@@ -175,7 +175,7 @@ public class FetchingEmailService {
 			if (addresses != null) {
 				ArrayList<String> to = new ArrayList<>();
 				for (Address a : addresses)
-					to.add(a.toString());
+					to.add(parseAddressFrom(a.toString()));
 				gmail.setTo(to);
 			}
 
